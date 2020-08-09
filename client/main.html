@@ -113,14 +113,20 @@
                             $('.collapsible').collapsible();
                         });
                     </script>
-                    <form class="messageForm">
                         <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">mode_edit</i>
-                                <input placeholder="Your thoughts..." id="message" name="text" type="text" >
+                            <div class="input-field col s12 log">
+                                <form class="realtimeThoughtForm" id="realtimeForm">
+                                    <i class="material-icons prefix">mode_edit</i>
+                                    <input placeholder="Realtime thoughts..." autocomplete="no-fill" id="message" name="text" type="text" >
+                                </form>
+                                <ul class="collection grey darken-4">
+                                    {{#each realtimeFeed}}
+                                    <li class="collection-item grey darken-4">{{text}}<span class="badge">{{momentDate}}</span></li>
+                                    {{/each}}
+                                </ul>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

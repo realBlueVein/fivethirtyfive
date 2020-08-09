@@ -1,12 +1,13 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import '../collections/message.js';
+import { RealtimeThoughts } from '../collections/message.js';
+import 'moment';
+import 'moment/dist/moment.js'
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
-
-
 import './main.html';
 import '../lib/routes';
+
 
 Meteor.subscribe('messages');
 
@@ -17,20 +18,27 @@ Template.base.events({
     'click .logout' () {
         Meteor.logout();
     },
-    'submit .messageForm' (event) {
+    'submit .realtimeThoughtForm' (event) {
         event.preventDefault();
         const target = event.target;
-        const text = target.text.value;
-        const author = Meteor.userId();
+        const captureText = target.text.value;
+        const captureAuthor = Meteor.userId();
 
-        const d = new Date();
-        const date = d.toISOString();
+        const markDate = moment().format('YYYYMMDD');
 
-        message.insert({
-            text: this.text,
-            author: this.author,
-            date: this.date
-        })
+        const d = new Date()
+
+        const plainDate = moment().format(' h:mm a');
+
+        RealtimeThoughts.insert({
+            text: captureText,
+            author: captureAuthor,
+            date: markDate,
+            sortDate: d,
+            momentDate: plainDate
+        });
+
+        document.getElementById("realtimeForm").reset();
 
     }
 })
@@ -38,6 +46,10 @@ Template.base.events({
 Template.base.helpers({
     username: function (){
         return Meteor.user();
+    },
+    realtimeFeed: function (){
+        let user = Meteor.userId();
+      return RealtimeThoughts.find({author: user, date: moment().format("YYYYMMDD")}, {sort: {sortDate: -1}});
     }
 });
 

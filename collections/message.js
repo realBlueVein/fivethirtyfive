@@ -1,8 +1,10 @@
 import SimpleSchema from 'simpl-schema';
+import { Mongo } from 'meteor/mongo';
 
-let message = new Mongo.Collection('message');
 
-message.allow({
+export const RealtimeThoughts = new Mongo.Collection('realtimeThoughts');
+
+RealtimeThoughts.allow({
     insert: function(userId, doc) {
         return true;
     },
@@ -14,16 +16,4 @@ message.allow({
     }
 });
 
-
-let messageMap = new SimpleSchema({
-   text: {
-       type: String
-   },
-    date: {
-       type: String,
-    },
-    author: {
-       type: String,
-    }
-});
 

@@ -18,3 +18,16 @@ input {
 .collapsible-header {
   border: none !important;
 }
+.log .active {
+  color:  #4fc3f7 !important;
+}
+.log input:focus {
+  border-bottom: none !important;
+  box-shadow: 0 1px 0 0 #4fc3f7 !important;
+}
+.card .card-action a {
+  color: #4fc3f7 !important;
+}
+.collection, .collection-item {
+  border: none !important;
+}
