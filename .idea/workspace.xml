@@ -20,15 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f8e8351-2eed-4364-8241-a8449ab049e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/fivethirtyfive.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.meteor/packages" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.meteor/versions" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/versions" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collections/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo-w.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1596951863891</updated>
       <workItem from="1596951865162" duration="73000" />
-      <workItem from="1596951952888" duration="6249000" />
+      <workItem from="1596951952888" duration="8371000" />
+      <workItem from="1596999714049" duration="3688000" />
     </task>
     <servers />
   </component>
@@ -97,5 +98,9 @@
       <screen x="0" y="0" width="3840" height="2130" />
     </state>
     <state x="1287" y="122" width="585" height="801" key="find.popup/654.-1440.2560.1410/0.0.3840.2130/-1200.235.1200.1920/3840.-1314.1440.3440@0.0.3840.2130" timestamp="1596955563877" />
+    <state x="1459" y="242" width="672" height="678" key="search.everywhere.popup" timestamp="1597001666647">
+      <screen x="0" y="0" width="3840" height="2130" />
+    </state>
+    <state x="1459" y="242" width="672" height="678" key="search.everywhere.popup/654.-1440.2560.1410/0.0.3840.2130/-1200.235.1200.1920/3840.-1314.1440.3440@0.0.3840.2130" timestamp="1597001666647" />
   </component>
 </project>

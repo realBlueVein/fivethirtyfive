@@ -14,24 +14,114 @@
 
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">05/35 Log</a>
+            <a href="#" class="brand-logo"><img src="/logo-w.png"  alt="logo" class="logo" /></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a class="logout" href="#"><i class="material-icons">exit_to_app</i> </a></li>
+                {{#if currentUser}}
+                    <li>{{username.services.discord.username}}</li>
+                    <li><a class="logout" href="#"><i class="material-icons">exit_to_app</i></a></li>
+                {{/if}}
             </ul>
         </div>
     </nav>
     {{#if currentUser}}
         <div class="container">
-            <h3>Welcome&nbsp;{{username.services.discord.username}}&nbsp;<a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add_alarm</i></a></h3>
             <div class="row">
-                <form class="col s12">
+                <div class="col s6">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <input placeholder="Your thoughts..." id="message" type="text" >
+                        <div class="col s12 m12">
+                            <div class="card grey darken-4">
+                                <div class="card-image">
+                                    <img src="https://i.imgur.com/Nlzj7K2.png">
+                                    <span class="card-title white-text">Pre-Market Prep</span>
+                                </div>
+                                <div class="card-content white-text">
+                                    <p>H1 - BPB of PVAL tar PVAH<br/>H2 - RPB of PVAH tar PVAL<br/>H3- RPB of WPVAH tar PVAL</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Open Prep</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </form>
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card grey darken-4">
+                                <div class="card-image">
+                                    <img src="https://i.imgur.com/cjg6HzW.png">
+                                    <span class="card-title white-text">Daily Debreif</span>
+                                </div>
+                                <div class="card-content white-text">
+                                    <p>Execution: 4 / Risk Management: 3 / Process Errors: 2</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Open Debreif</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <ul class="collapsible popout">
+                        <li class="active">
+                            <div class="collapsible-header light-blue lighten-2 white-text"><i class="material-icons">place</i>Process Goal</div>
+                            <div class="collapsible-body"><span>Work on holding core positions into targets, no early scale.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header grey darken-4"><i class="material-icons">filter_drama</i>Economic Calendar</div>
+                            <div class="collapsible-body">
+                                <!-- TradingView Widget BEGIN -->
+                                <div class="tradingview-widget-container">
+                                    <div class="tradingview-widget-container__widget"></div>
+                                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/economic-calendar/" rel="noopener" target="_blank"><span class="blue-text">Economic Calendar</span></a> by TradingView</div>
+                                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                                        {
+                                            "colorTheme": "dark",
+                                                "isTransparent": true,
+                                                "width": "510",
+                                                "height": "600",
+                                                "locale": "en",
+                                                "importanceFilter": "-1,0,1",
+                                                "currencyFilter": "USD"
+                                        }
+                                    </script>
+                                </div>
+                                <!-- TradingView Widget END -->
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header grey darken-4"><i class="material-icons">whatshot</i>QuickLinks</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" title="Journal">My Apteros Journal</a></li>
+                                    <li><a href="https://www.financialjuice.com/home" target="_blank" title="Squak">Squak Feed</a></li>
+
+                                </ul>
+
+                            </div>
+                        </li>
+                    </ul>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var elems = document.querySelectorAll('.collapsible');
+                            var instances = M.Collapsible.init(elems, options);
+                        });
+
+                        // Or with jQuery
+
+                        $(document).ready(function(){
+                            $('.collapsible').collapsible();
+                        });
+                    </script>
+                    <form class="messageForm">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <input placeholder="Your thoughts..." id="message" name="text" type="text" >
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     {{else}}
@@ -54,5 +144,6 @@
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     </body>
 </template>
